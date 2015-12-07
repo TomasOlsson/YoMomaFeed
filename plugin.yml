@@ -12,6 +12,8 @@
     permission:
         feedme.feed:
             description: "Feed that face permission"
-            default: false
-        feedme.other:
-            description: "Feed others face permission"
+            default: op
+            children:
+                feedme.other:
+                    description: "Feed others face permission"
+                    default: op
