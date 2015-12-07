@@ -23,7 +23,7 @@ class Loader extends PluginBase{
                         if($player instanceof Player){ 
                             // Send some pointless messeges
                            $sender->sendMessage("Yo mama fed ".$name." face!");
-                           $player->sendMessage($sender." mama fed ur face!");
+                           $player->sendMessage("Yo mama fed ur face!");
                            // set food to 20
                            $player->setFood(20);
                             return true;
