@@ -17,19 +17,21 @@ class Loader extends PluginBase{
         if(strtolower($command->getName()) === "feed"){
             if ($sender instanceof Player) {
                 if (count($args) != 0) {
-                    $name = $args[0];
-                    $player = $this->getServer()->getPlayer($name);
-                    if($player instanceof Player){
-                        if ($sender->hasPermission("feedme.other")) { 
+                    if ($sender->hasPermission("feedme.other")) {
+                        $name = $args[0];
+                        $player = $this->getServer()->getPlayer($name);
+                        if($player instanceof Player){ 
+                            // Send some pointless messeges
                            $sender->sendMessage("Yo mama fed ".$name." face!");
+                           $player->sendMessage($sender." mama fed ur face!");
+                           // set food to 20
                            $player->setFood(20);
-                           $player->sendMessage("Yo mama fed ur face!");
                             return true;
-                        }  
-                    }else{ $sender->sendMessage("That player ain't online!"); }
-                } else {
-                    $sender->setFood(20);
+                        } else{ $sender->sendMessage("Player ain't online!"); return true; }  
+                    } else { $sender->sendMessage("Ain't nobody got that permissions!"); return true; }
+                } else { // If args is missing set your own food to 20
                     $sender->sendMessage("Yo mama fed ur face!");
+                    $sender->setFood(20);
                     return true;   
                 }
             } else { $sender->sendMessage("Nah not gonna feed that console"); return true; }
@@ -37,4 +39,3 @@ class Loader extends PluginBase{
         return false;
     }             
 }
-    
