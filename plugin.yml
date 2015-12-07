@@ -8,3 +8,10 @@
         description: "Feed that face!"
         usage: "/feed (Player)"
         permission: feedme.feed
+        
+    permission:
+        feedme.feed:
+            description: "Feed that face permission"
+            default: false
+        feedme.other:
+            description: "Feed others face permission"
