@@ -1,14 +1,8 @@
     name: feed
     main: feed\Loader
-    version: 0.0.9
+    version: 0.1.0
     api: 1.12.0
-    
-    commands:
-     feed:
-        description: "Feed that face!"
-        usage: "/feed (Player)"
-        permission: feedme.feed
-        
+
     permission:
         feedme.feed:
             description: "Feed that face permission"
