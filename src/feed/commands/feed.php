@@ -13,9 +13,6 @@ class feed extends cmd\Command implements cmd\PluginIdentifiableCommand{
     $this->setPermission("feedme.feed");
     $this->plugin = $plugin;
   }
-  public function getPlugin(){
-    return $this->plugin;
-  }
   public function execute(cmd\CommandSender $sender, $label, array $args){
     if ($sender instanceof Player) {
         if (count($args) != 0) {
